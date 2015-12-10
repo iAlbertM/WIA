@@ -35,9 +35,6 @@ body {
 /*********************************************
  * HEADERS
  *********************************************/
-.reveal .slides > section.present {
-	
-}
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -51,12 +48,13 @@ body {
 	letter-spacing: 3px;
 }
 
-	p#tagline {
-		display: block;
-		font-size: 70px;
-		background-color: #fff04f;
-		color: #9a7415;
-	}
+p#tagline {
+	display: block;
+	font-size: 70px;
+	background-color: #fff04f;
+	color: #9a7415;
+}
+
 @media (min-width: 760px) {
 /*  GLOBAL STYLES */
 	.reveal {
@@ -119,7 +117,7 @@ body {
 }
 
 
-/*********************************************
+/* ********************************************
  * IMAGES
  *********************************************/
 

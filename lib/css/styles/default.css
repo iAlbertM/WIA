@@ -107,7 +107,7 @@ pre .asciidoc .attribute,
 pre .lasso .attribute,
 pre .coffeescript .property,
 pre .makefile .phony {
-  color: #88F
+  color: #88F;
 }
 
 pre .keyword,
