@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>reveal.js - The HTML Presentation Framework</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/styles/sunburst.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+		document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+	</script>
+
+	<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+			<!--<section> go here-->
+			<!-- 0: INTRO -->
+			<section>
+				<h1><strong>DateDropper</strong></h1>
+				<p id="tagline">jQuery plugin</p>
+
+				<p class="intro-details">by: Albert Martinez</p>
+				<p class="intro-details"> course: WIA-1512 | instructor: Eric Silvay</p>
+			</section>
+
+			<!-- 1: WHAT -->
+			<section>
+				<section>
+					<h2>What is <strong>DateDropper</strong>?</h2>
+				</section>
+
+				<section>
+					<h3><strong>DateDropper</strong> is:</h3>
+					<ul>
+						<li><b>Type:</b> jQuery Extension made by Felice Gattuso</li>
+						<li><b>GitHub initial commit</b>: February 16, 2015</li>
+						<li><b>Purpose</b>: "a jQuery plugin that provides a quick and easy way to manage dates for input fields."</li>
+						<!-- simple way to customize & interact with dates for input fields -->
+					</ul>
+				</section>
+				<section id="browser">
+					<h3>Support &amp; Dependencies</h3>
+					<ul>
+						<li><b>Dependency</b>: jQuery v 1.7 - current</li>
+						<li><b>Browser Support</b>: earliest version supported
+							<ul id="browsers">
+								<li class="browsers ie">IE 9+</li>
+								<li class="browsers ff">FF 4+</li>
+								<li class="browsers chrome">Chrome 14+</li>
+								<li class="browsers safari">Safari 5+</li>
+								<li class="browsers opera">Opera 12+</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- 2: SETUP -->
+			<section>
+				<section>
+					<h2>Set Up <strong>DateDropper</strong></h2>
+				</section>
+				<!-- Step 1 -->
+				<section>
+					<h3>Step 1: Links in the <span class="fragment highlight-blue">head</span> of your document</h3>
+					<ul>
+						<li class="fragment roll-in">jQuery</li>
+						<li class="fragment roll-in">DateDropper Plugin</li>
+						<li class="fragment roll-in">DateDropper stylesheet</li>
+						<li class="fragment roll-in">Your own JS file</li>
+					</ul>
+					<p>
+						<small size="2">It should look similar to this:</small></p>
+					<pre><code>
+<!-- STYLESHEETS -->
+<link rel="stylesheet" type="text/css" href="css/datedropper.css">
+
+<!-- SCRIPTS -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/datedropper.min.js"></script>
+<script src="js/main.js"></script>
+</code></pre>
+				</section>
+
+				<!-- Step 2 -->
+				<section>
+					<h2>Step 2: Set up the input fields</h2>
+					<p>Input fields should have the following attributes:</p>
+					<ul>
+						<li><pre><code> <input type="text" id="anyID" > </code></pre></li>
+						<li>Set <span class="code">type</span> to <span class="code">"text"</span></li>
+						<li>Set <span class="code">id</span> to <span class="code">"whatever"</span>
+						</li>
+						<!--							 This is because you will customize the input fields and their values as strings with JavaScript-->
+						<!-- 							 In case of any changes to your code and you are using strictly css selectors things can get messy pretty fast -->
+					</ul>
+				</section>
+
+				<!-- Step 3 -->
+				<section>
+					<h2>Step 3: Configure using JS </h2>
+					<ul>
+						<li>Target input fields by their #id's:
+							<pre><code>$("#birthDate")</code></pre></li>
+						<li>Call the dateDropper method
+							<pre><code>$("#birthDate").dateDropper()</code></pre></li>
+						<li>Pass in options as an object
+							<pre><code>$("#birthDate").dateDropper({option:value})</code></pre></li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- 3: EXAMPLES -->
+			<section>
+				<section>
+					<h2>Watch: <strong>DateDropper</strong> in action!</h2>
+				</section>
+				
+				<section>
+					<h3> Example Code Demo</h3>
+					<video width='100%' controls="$('#vid').hover" title="datedropper-demo" poster="video/datedropper-demo.jpg">
+						<source src='video/datedropper-demo.mp4' type='video/mp4'>
+						<source src='video/datedropper-demo.ogv' type='video/ogg'>
+						Sorry, your web browser doesn't support HTML5 video.
+					</video>
+				</section>
+				
+			</section>
+
+			<!-- 4: CODE WALKTHROUGH -->
+			<section>
+				<section>
+					<h2>Learn: <strong>DateDropper</strong> Code Walkthrough</h2>
+				</section>
+				
+				<section>
+					<h3>HTML</h3>
+					<pre><code class="html">
+
+<h3>Example Input Fields</h3>
+
+<input type="text" id="ex1" placeholder="Birth Date">
+
+<input type="text" id="ex2" placeholder="High School Graduation">
+
+<input type="text" id="ex3" placeholder="First Kiss">
+
+<input type="text" id="ex4a" placeholder="Grad month">
+
+<input type="text" id="ex4b" placeholder="Grad year">
+
+<input type="submit" value="submit" id="submit">
+
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>JS</h3>
+					<pre><code class="javascript">
+$(function () {
+$("#ex1").dateDropper({
+format: " m / d / Y ",
+minYear: "1930",
+maxYear: "1998",
+animation: "dropdown",
+years_multiple: "20",
+color: "#fa9f42"
+});
+
+
+$("#ex2").dateDropper({
+format: "Y",
+years_multiple: "10",
+color: "#00BABE"
+});
+
+
+$("#ex3").dateDropper({
+format: " l | F j, Y ",
+minYear: "1930",
+maxYear: "2015",
+animation: "dropdown",
+years_multiple: "20",
+color: "#aad33a"
+});
+
+
+$("#ex4a").dateDropper({
+format: "m",
+animation: "bounce",
+color: "#e33298"
+});
+
+
+$("#ex4b").dateDropper({
+format: "Y",
+maxYear: 2020,
+animation: "bounce",
+color: "#e33298"
+});
+});
+</code></pre>
+				</section>
+			</section>
+			<!-- 5: END -->
+			<section>
+				<H2>THANKS SO MUCH FOR WATCHING!</H2>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: false,
+
+			// Presentation theme: available themes are in /css/theme
+			theme: Reveal.getQueryHash().theme || 'simple',
+
+			// Link transitions: default/cube/page/concave/zoom/linear/fade/none
+			transition: Reveal.getQueryHash().transition || 'concave',
+
+			dependencies: [
+// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{
+					src: 'lib/js/classList.js',
+					condition: function () {
+						return !document.body.classList;
+					}
+				},
+
+// Interpret Markdown in <section> elements
+				{
+					src: 'plugin/markdown/marked.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: 'plugin/markdown/markdown.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+
+// Syntax highlight for <code> elements
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				},
+
+// Zoom in and out with Alt+click
+				{
+					src: 'plugin/zoom-js/zoom.js',
+					async: true
+				},
+
+// Speaker notes
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+
+// MathJax
+				{
+					src: 'plugin/math/math.js',
+					async: true
+				}
+]
+		});
+	</script>
+
+</body>
+
+</html>
