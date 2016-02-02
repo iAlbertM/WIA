@@ -1,0 +1,203 @@
+body {
+	font-family: "Roboto", "Roboto condensed", "helveticaneueltstd-roman", helvetica, arial, sans-serif;
+	line-height: 1.4;
+	color: rgba(0, 0, 0, 0.8);
+	width: 90%;
+	margin: 0 auto;
+	padding:0;
+}
+
+form {
+	width: 88%;
+	padding: 10px 10px;
+}
+
+
+h1 {
+	color: rgba(40, 40, 40, 0.8);
+	text-transform: uppercase;
+	font-size: 2.8rem;
+	word-break: keep-all;
+	line-height: 1;
+}
+
+.highlight { color: #fa9f42; }
+
+h2 {
+	color: rgba(80, 80, 80, 0.5);
+	font-size: 1.4rem;
+	font-weight: 100;
+}
+
+h3 {
+	color: rgba(12, 13, 13, 0.67);
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+form > h3 {
+	width: 100%;
+	padding: 10px;
+	margin-left: -20px;
+	margin-right: 0;
+	
+}
+
+h3 em {
+	color: #f7b63c;
+	font-weight: 800;
+}
+
+p {
+	margin: 30px 0;
+	width: 100%;
+}
+label,
+input[type=text] {
+	display: block;
+	font-family: inherit;
+	text-align: left;
+	padding-left: 10px;	
+}
+
+label {
+	width: 100%;
+	color: #000;
+	font-weight: bold;
+}
+
+input[type=text] {
+	border: none;
+	border-bottom: 2px solid #000000;
+	background: #FFF;
+	width: 100%;
+	min-height: 40px;
+	color: #000;
+	font-size: 18px;
+	line-height: normal;
+}
+
+
+input[type=submit] {
+	display: block;
+	height: 64px;
+	width: 100%;
+	margin-top: 80px;
+	cursor: pointer;
+	padding: 10px 20px;
+	border: 0 none #721817;
+	border-bottom: 4px solid #721817;
+	border-radius: 7px 7px 9px 9px;
+	font: normal normal bold 24px/40px "Averia Sans Libre", Helvetica, sans-serif;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-transform: uppercase;
+	background: #fa9f42;
+}
+
+input[type=submit]:active {
+	background: #fa9f42;
+}
+
+input#ex4a, input#ex4b {
+	display: inline-block;
+	width: 40%;	
+}
+
+input#ex4a {
+	margin-right: 20px;
+}
+
+
+
+/* ///////////////////////
+	RESPONSIVE STYLES
+  /////////////////////// */
+
+@media (min-width: 760px) {
+	body {
+		max-width: 960px;
+		margin: 0 auto; 
+		padding: 0 5%;
+	}
+	
+	header{
+		padding: 20px 5% 0 5%;
+	}
+
+	footer {
+		text-align: center;
+	}
+	
+	footer a, footer a:link {
+		color: black;
+		font-weight: bold;
+	}
+	section {
+		padding: 10px 5% 30px 5%;
+	}
+
+	form {
+		position: relative;
+		margin: 0 auto;
+	}
+
+	p {
+		padding: 0;
+	}
+	
+	input[type=text] {
+		display: inline-block;
+		width: 60%;
+		min-height: 40px;
+		font-size: 14px;
+		padding-left: 0.5rem;
+	}
+	
+	input[type=text]:focus,
+	input[type=text]:hover {
+		box-shadow: 0 0 0px 6px rgba(0, 0, 0, 0.05);
+		-webkit-box-shadow: 0 0px 0px 6px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: 0 0px 0px 6px rgba(0, 0, 0, 0.05);
+	}
+	
+	input[type=submit] {
+		display: block;
+		height: 48px;
+		width: 20%;
+		margin-top: 80px;
+		cursor: pointer;
+		padding: 0;
+		font-size: 14px;
+		line-height: normal;
+		text-align: center;
+	}
+	
+	input[type=submit]:hover {
+		background: #ffbf7d;
+		transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
+	}
+	
+	input#ex4a, input#ex4b {
+		display: inline-block;
+		width: 10%;
+	}
+	
+	input#ex4a {
+		margin-right: 20px;
+		padding-right: 10px;
+	}
+	
+	h1 {
+		font-size: 2.4rem;
+		line-height: 0;
+		text-shadow: 0 1px #721817;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+	}
+}
